@@ -1,0 +1,10 @@
+<div class = "container">
+	<h1>List of Tasks</h1>
+	<ul>
+		<% @tasks.each do |task| %>
+		<li><%= check_box_tag(task.completed, value = "1", checked = task.completed)%> <%= link_to task.title, task_path(task.id) %></li>
+		<% end %>
+	</ul>
+	<br>
+	<p><%= link_to "+ Add a new task to the list", new_path%></p>
+</div>
